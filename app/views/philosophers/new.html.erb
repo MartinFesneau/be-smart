@@ -1,0 +1,14 @@
+<h1>Create a new philosopher</h1>
+
+<%= simple_form_for(@philosopher) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :specialty %>
+    <%= f.input :nationality %>
+    <%= f.input :birthday %>
+    <%= f.input :prestations %>
+    <%= f.input :available_location %>
+    <%= f.input :price_per_night %>
+    <%= f.input :description %>
+    <%= f.submit %>
+<% end %>

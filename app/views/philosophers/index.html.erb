@@ -3,7 +3,7 @@
       <h1 class="title-index-philosophers">All philosophers</h1>
       <% @philosophers.each do |philosopher| %>
       <div class="card-philosopher">
-        <%= philosopher.photo %>
+        <%= cl_image_tag(philosopher.photo.key,width: 150, height: 150, crop: :fill) %>
         <% if philosopher.first_name?  %>
           <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
         <% else %>

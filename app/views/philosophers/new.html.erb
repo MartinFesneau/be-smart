@@ -11,7 +11,7 @@
             <%= f.input :specialty %>
             <%= f.input :nationality %>
             <%= f.input :birthday, class: "custom-select" %>
-            <%= f.input :prestations, collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
+            <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
             <%= f.input :available_location %>
             <%= f.input :price_per_night %>
             <%= f.input :description %>

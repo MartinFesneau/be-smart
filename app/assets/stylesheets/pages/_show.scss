@@ -1,0 +1,77 @@
+.show {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-background-color;
+  margin-right: 50px auto;
+}
+
+.content {
+  display: flex;
+  align-self: center;  
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+img {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+ul {
+  display: inline;
+}
+
+li {
+  display: inline;
+  list-style: none;
+  color: $medium-text-color;
+}
+
+.prestation {
+  border: 1px $border-color solid;
+  padding: 8px 16px;
+  border-radius: 25px;
+}
+
+h1 {
+  color: $high-text-color;
+}
+
+h2 {
+  color: $medium-text-color;
+}
+
+p {
+  color: $medium-text-color;
+}
+
+.form {
+  width: 200px;
+  display: inline;  
+}
+
+.price {
+  font-size: $h3;
+  font-weight: bold;
+}
+
+.btn-book {
+  font-family: $body-font;
+  border: 5px $primary-color solid;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-align: center;
+  color: $primary-color;
+  font-size: $h3;
+  margin-top: 32px;
+  font-weight: bold;
+}
+
+.btn-book:hover {
+  text-decoration: none;
+  font-size: 28px;
+  transition: all 0.3s ease;
+  color: $primary-hover;
+  border: 5px $primary-hover solid;
+}

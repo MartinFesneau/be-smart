@@ -1,59 +1,93 @@
-.show {
-  display: flex;
-  justify-content: space-between;
-  background-color: $main-background-color;
-  margin-right: 50px auto;
-}
+
 
 .content {
-  display: flex;
-  align-self: center;  
-  flex-direction: column;
-  margin-top: 100px;
+  padding: 32px;
+  
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    color: $high-text-color;
+    margin-bottom: 32px;
+    margin-top: 128px;
+  }
+  
+  h2 {
+    color: $medium-text-color;
+  }
+
+  .primary-btn {
+    margin: 24px 0;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      box-shadow: $box-shadow-color;
+    }
+  }
 }
 
-img {
-  height: 100vh;
+.photo {
   position: sticky;
   top: 0;
+  img {
+    height: 100vh;
+  }
 }
 
 ul {
-  display: inline;
+  padding-left: 0 ;
+  margin-bottom: 0;
+    li {
+    display: inline-block;
+    list-style: none;
+    color: $medium-text-color;
+    margin-right: 8px; 
+    margin-bottom: 8px;
+
+    &:hover {
+      box-shadow: $box-shadow-color;
+    }
+  }
+}
+.cont-nationality {
+  margin-bottom: 24px;
 }
 
-li {
-  display: inline;
-  list-style: none;
-  color: $medium-text-color;
+.cont-specialty {
+  margin-bottom: 24px;
 }
 
+.cont-prestations {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+
+    h4 {
+    margin-bottom: 12px;
+  }
+}
+
+.cont-description {
+  background-color: $secondary-background-color;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+
+    p {
+      margin: 0;
+    }
+}
 .prestation {
   border: 1px $border-color solid;
   padding: 8px 16px;
   border-radius: 25px;
 }
 
-h1 {
-  color: $high-text-color;
-}
-
-h2 {
-  color: $medium-text-color;
-}
-
-p {
-  color: $medium-text-color;
-}
-
 .form {
   width: 200px;
   display: inline;  
-}
-
-.price {
-  font-size: $h3;
-  font-weight: bold;
 }
 
 .btn-book {
@@ -75,3 +109,4 @@ p {
   color: $primary-hover;
   border: 5px $primary-hover solid;
 }
+

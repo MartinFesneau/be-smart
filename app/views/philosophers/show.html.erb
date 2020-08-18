@@ -12,9 +12,9 @@
     <span> @philosopher.price_per_night</span>
   </div>
 
-  <div class="photo">
+  <%# <div class="photo">
     <% if @philosopher.photo.attached? %>
-      <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
-    <% end %>
-  </div>
+      <%# <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
+    <%# <% end %> 
+  <%# </div> 
 </div>

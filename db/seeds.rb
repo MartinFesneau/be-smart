@@ -35,7 +35,8 @@ puts 'Creating philosopher'
                       available_location: ["Athens", "Heraklion", "Rhodes"].sample,
                       price_per_night: (25..75).to_a.sample,
                       description: Faker::GreekPhilosophers.quote,
-                      prestations: "Parler des heures" )
+                      prestations: Philosopher::PRESTATIONS.sample(2)
+                      )
   philosophe.user = jean
   philosophe.save!
 end

@@ -27,8 +27,8 @@ class PhilosophersController < ApplicationController
   def philosopher_params
     params.require(:philosopher).permit(
       :first_name, :last_name, :nationality, :birthday,
-      :specialty, :available_location, :prestations, :price_per_night,
-      :description, prestations: []
+      :specialty, :available_location, :price_per_night,
+      :description, :photo, prestations: []
     )
   end
 end

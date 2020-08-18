@@ -1,6 +1,25 @@
-// Define variables for your color scheme
+// -- Background color --
+$main-background-color: hsl(0, 0%, 100%);
+$secondary-background-color: hsl(0, 0%, 97%);
 
-// For example:
+// -- Text color --
+$high-text-color: hsl(0, 0%, 13%);
+$medium-text-color: hsl(0, 0%, 44%);
+$high-text-hover: hsl(0, 0%, 13%);
+
+// -- Primary color --
+$primary-color: hsl(349, 100%, 61%);
+$primary-hover: hsl(334, 73%, 33%);
+
+// -- Border color --
+$border-color: hsl(0, 0%, 87%);
+
+// -- Box shadow --
+$box-shadow-color: 0px, 2px, 8px rgba(0,0,0,0.15);
+
+
+
+// Bootstrap:
 $red: #FD1015;
 $blue: #167FFB;
 $yellow: #FFC65A;
@@ -8,4 +27,3 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
-

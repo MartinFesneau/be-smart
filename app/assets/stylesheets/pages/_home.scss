@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.con-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+@media(max-width: 992px) {
+  .con-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .con-cards {
+    grid-template-columns: 1fr;
+  }
+}

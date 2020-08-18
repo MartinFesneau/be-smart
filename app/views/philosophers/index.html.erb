@@ -3,16 +3,17 @@
       <h1 class="title-index-philosophers">All philosophers</h1>
       <% @philosophers.each do |philosopher| %>
       <div class="card-philosopher">
-          <% if philosopher.first_name?  %>
-            <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
-          <% else %>
-             <h4 class="title"><%= philosopher.last_name %></h4>
-          <% end %>
-          <%= philosopher.description %>
+        <%= philosopher.photo %>
+        <% if philosopher.first_name?  %>
+          <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
+        <% else %>
+           <h4 class="title"><%= philosopher.last_name %></h4>
+        <% end %>
+        <%= philosopher.description %>
       </div>
       <% end %>
   </div>
   <div class="map">
-    <p>map to be done</p>
+    <%= image_tag("https://www.lonelyplanet.com/maps/europe/greece/athens/map_of_athens.jpg", :alt => "Athens") %>
   </div>
 </div>

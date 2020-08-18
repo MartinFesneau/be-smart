@@ -1,0 +1,16 @@
+.primary-btn {
+  display: inline-block;
+  padding: 16px;
+  background-color: $primary-color;
+  text-decoration: none;
+  color: $main-background-color;
+  font-size: $p;
+  font-weight: $semi-bold;
+  border-radius: 32px;
+
+  &:hover {
+    text-decoration: none;
+    color: $main-background-color;
+    background-color: $primary-hover;
+  }
+}

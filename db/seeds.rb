@@ -11,7 +11,7 @@ User.destroy_all
 
 puts 'Creating user'
 
-jean = User.create(
+jean = User.new(
             email:"jean.martin@gmail.com",
             first_name:"Jean",
             last_name:"Martin",
@@ -27,7 +27,7 @@ puts 'End creating user'
 puts 'Creating philosopher'
 
 10.times do
-  philosophe = Philosopher.create(nationality: "Greek",
+  philosophe = Philosopher.new(nationality: "Greek",
                       first_name:"",
                       last_name: Faker::GreekPhilosophers.name,
                       birthday: Faker::Date.between(from: '0001-01-01', to: '1000-01-01'),

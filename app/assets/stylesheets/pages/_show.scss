@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-background-color;
+  margin-right: 50px;
+}
+
+.content {
+  align-self: center;
+  position: sticky;
+  top: 250px;
+}
+
+img {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  display: inline;
+  list-style: none;
+  $medium-text-color:
+}
+
+h1 {
+  color: $high-text-color;
+}
+
+h2 {
+  color: $medium-text-color;
+}
+
+p {
+  color: $medium-text-color;
+}
+
+.form {
+  width: 200px;
+  display: inline;  
+}

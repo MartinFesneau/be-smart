@@ -1,29 +1,27 @@
 <div class="container">
+  <div class="show">
+    <div class="content">
+      <h1 class="title"><%= @philosopher.last_name %></h1>
+      <h2 class="title"><%= @philosopher.nationality %> - <%= @philosopher.specialty %></h2>
+      <p><%= @philosopher.description %></p>
+      <p class='price'><%= @philosopher.price_per_night%>€ per night</p>
+      <p>Prestations: </p>
+      <ul>
+        <% @philosopher.prestations.each do |prestation| %>
+          <li class="prestation"> <%= prestation  %> </li>
+          <% end %>
+      </ul>
+      <%= link_to "Party with #{@philosopher.last_name}",'',  class:"btn-book" %>
+    </div>
 
-  <div class="content">
-    <h1 class="title"><%= @philosopher.last_name %></h1>
-    <h2 class="title"><%= @philosopher.nationality %> - <%= @philosopher.specialty %></h2>
-    <p><%= @philosopher.description %></p>
-    <span>Prestations: </span>
-    <ul>
-      <% @philosopher.prestations.each do |prestation| %>
-        <li> <%= prestation  %> </li>
-        <% end %>
-    </ul>
-    <span> <%= @philosopher.price_per_night %>€ per night</span>
-
-    <a href="#"> Book <%= @philosopher.last_name %> now !</a>
-
-   
-
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parmenides.jpg/880px-Parmenides.jpg" alt="">
+    </div>
+    <%# <div class="photo">
+      <% if @philosopher.photo.attached? %>
+        <%# <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
+      <%# <% end %> 
+    <%# </div>  %> 
+  
   </div>
-
-  <div class="photo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parmenides.jpg/880px-Parmenides.jpg" alt="">
-  </div>
-  <%# <div class="photo">
-    <% if @philosopher.photo.attached? %>
-      <%# <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
-    <%# <% end %> 
-  <%# </div>  %> 
 </div>

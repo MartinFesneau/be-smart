@@ -1,0 +1,10 @@
+<h1>All philosophers</h1>
+
+<ul>
+  <% @philosophers.each do |philosopher| %>
+  <li>
+    <%= philosopher.first_name philosopher.last_name %>
+    <%= philosopher.description %>
+  </li>
+  <% end %>
+</ul>

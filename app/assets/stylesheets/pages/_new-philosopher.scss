@@ -1,0 +1,23 @@
+.container-flex {
+  display: flex;
+}
+
+.form-part h1 {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.form-part p {
+  opacity: .8;
+}
+
+.form-part {
+  margin: 0 auto;
+  input {
+    background-color: $light-gray;
+    border: none;
+  }
+  input[type="file"] {
+    background-color: white;
+  }
+}

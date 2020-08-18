@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :philosophers
   has_one_attached :photo
-  
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true

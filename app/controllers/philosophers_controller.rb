@@ -11,4 +11,24 @@ class PhilosophersController < ApplicationController
   def show
     @philosopher = Philosopher.find(params[:id])
   end
+
+  def create
+    @philosopher = Philosopher.new(philosopher_params)
+    @philosopher.user = current_user
+    if @philosopher.save
+      redirect_to philosopher_path(@philosopher)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def philosopher_params
+    params.require(:philosopher).permit(
+      :first_name, :last_name, :nationality, :birthday,
+      :specialty, :available_location, :prestations, :price_per_night,
+      :description, prestations: []
+    )
+  end
 end

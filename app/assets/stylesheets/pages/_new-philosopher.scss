@@ -18,7 +18,10 @@
     background-color: $secondary-background-color;
     border: none;
   }
-
+  textarea {
+    background-color: $secondary-background-color;
+    border: none;
+  }
   input[type="file"] {
     background-color: white;
   }
@@ -27,4 +30,10 @@
   }
 }
 
+.space-top {
+  margin-top: 10px;
+}
 
+fieldset, .form-group {
+  margin-top: 25px;
+}

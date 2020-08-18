@@ -1,11 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
+
 Philosopher.destroy_all
 User.destroy_all
 
@@ -27,6 +22,7 @@ puts 'End creating user'
 puts 'Creating philosopher'
 
 10.times do
+  file = URI.open('https://source.unsplash.com/random/800x600')
   philosophe = Philosopher.new(nationality: "Greek",
                       first_name:"",
                       last_name: Faker::GreekPhilosophers.name,
@@ -35,8 +31,9 @@ puts 'Creating philosopher'
                       available_location: ["Athens", "Heraklion", "Rhodes"].sample,
                       price_per_night: (25..75).to_a.sample,
                       description: Faker::GreekPhilosophers.quote,
-                      prestations: Philosopher::PRESTATIONS.sample(2)
+                      prestations: Philosopher::PRESTATIONS.sample(2),
                       )
+  philosophe.photo.attach(io: file, filename: 'profil-picture.jpeg', content_type: 'image/jpeg')
   philosophe.user = jean
   philosophe.save!
 end

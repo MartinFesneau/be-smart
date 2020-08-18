@@ -8,6 +8,10 @@ class PhilosophersController < ApplicationController
     @philosopher = Philosopher.new
   end
 
+  def show
+    @philosopher = Philosopher.find(params[:id])
+  end
+
   def create
     @philosopher = Philosopher.new(philosopher_params)
     @philosopher.user = current_user

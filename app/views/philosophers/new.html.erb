@@ -1,15 +1,23 @@
-<h1>Create a new philosopher</h1>
-
-<%= simple_form_for(@philosopher) do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :specialty %>
-    <%= f.input :nationality %>
-    <%= f.input :birthday %>
-    <%= f.input :prestations, collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
-    <%= f.input :available_location %>
-    <%= f.input :price_per_night %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="container-flex">
+    <div class="form-part">
+      <h1>Create a new philosopher.</h1>
+      <p>Add your philosopher and let other people enjoy his widsom.</p>
+      <div class="create-form">
+        <%= simple_form_for(@philosopher) do |f| %>
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :specialty %>
+            <%= f.input :nationality %>
+            <%= f.input :birthday, class: "custom-select" %>
+            <%= f.input :prestations, collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
+            <%= f.input :available_location %>
+            <%= f.input :price_per_night %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</div>

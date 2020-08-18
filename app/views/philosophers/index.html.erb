@@ -1,14 +1,18 @@
-<h1>All philosophers</h1>
-
-<ul>
-  <% @philosophers.each do |philosopher| %>
-  <li>
-    <% if philosopher.first_name?  %>
-      <%= philosopher.first_name philosopher.last_name %>
-    <% else %>
-      <%= philosopher.last_name %>
-    <% end %>
-    <%= philosopher.description %>
-  </li>
-  <% end %>
-</ul>
+<div class="container-index-philosopher">
+  <div class="list-philosophers">
+      <h1 class="title-index-philosophers">All philosophers</h1>
+      <% @philosophers.each do |philosopher| %>
+      <div class="card-philosopher">
+          <% if philosopher.first_name?  %>
+            <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
+          <% else %>
+             <h4 class="title"><%= philosopher.last_name %></h4>
+          <% end %>
+          <%= philosopher.description %>
+      </div>
+      <% end %>
+  </div>
+  <div class="map">
+    <p>map to be done</p>
+  </div>
+</div>

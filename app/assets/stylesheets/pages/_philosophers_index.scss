@@ -1,0 +1,22 @@
+.container-index-philosopher {
+  display: flex;
+}
+
+.title-index-philosophers {
+  text-align: center;
+}
+
+.list-philosophers {
+  width: 50%;
+}
+
+.map {
+  width: 50%;
+}
+
+.card-philosopher {
+  box-shadow: $box-shadow-color;
+  height: 160px;
+  padding: 8px;
+  margin: 16px;
+}

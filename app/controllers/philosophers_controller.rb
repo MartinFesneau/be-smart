@@ -7,4 +7,8 @@ class PhilosophersController < ApplicationController
   def new
     @philosopher = Philosopher.new
   end
+
+  def show
+    @philosopher = Philosopher.find(params[:id])
+  end
 end

@@ -3,7 +3,11 @@
 <ul>
   <% @philosophers.each do |philosopher| %>
   <li>
-    <%= philosopher.first_name philosopher.last_name %>
+    <% if philosopher.first_name?  %>
+      <%= philosopher.first_name philosopher.last_name %>
+    <% else %>
+      <%= philosopher.last_name %>
+    <% end %>
     <%= philosopher.description %>
   </li>
   <% end %>

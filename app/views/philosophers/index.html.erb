@@ -1,15 +1,24 @@
 <div class="container-index-philosopher">
   <div class="list-philosophers">
-      <h1 class="title-index-philosophers">All philosophers</h1>
+      <h1 class="title">All philosophers</h1>
       <% @philosophers.each do |philosopher| %>
       <div class="card-philosopher">
-        <%= cl_image_tag(philosopher.photo.key,width: 150, height: 150, crop: :fill) %>
-        <% if philosopher.first_name?  %>
-          <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
-        <% else %>
-           <h4 class="title"><%= philosopher.last_name %></h4>
-        <% end %>
-        <%= philosopher.description %>
+        <%= cl_image_tag(philosopher.photo.key,width: 160, height: 160, crop: :fill, class:"card-photo") %>
+        <div class="card-content">
+          <% if philosopher.first_name?  %>
+            <h4 class="title"><%= philosopher.first_name philosopher.last_name %></h4>
+          <% else %>
+             <h4 class="title"><%= philosopher.last_name %></h4>
+          <% end %>
+          <% philosopher.prestations.each do |prestation| %>
+          <ul class="card-list">
+            <li><%= prestation %></li>
+          </ul>
+          <% end %>
+        </div>
+        <div class="card-price">
+          <p><%= philosopher.price_per_night %> €/night</p>
+        </div>
       </div>
       <% end %>
   </div>

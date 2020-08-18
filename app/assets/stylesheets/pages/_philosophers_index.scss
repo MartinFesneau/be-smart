@@ -2,10 +2,6 @@
   display: flex;
 }
 
-.title-index-philosophers {
-  text-align: center;
-}
-
 .list-philosophers {
   width: 50%;
 }
@@ -14,9 +10,41 @@
   width: 50%;
 }
 
+.card-photo {
+  border-radius: 16px 0 0 16px;
+}
+
 .card-philosopher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: $box-shadow-color;
   height: 160px;
-  padding: 8px;
+  padding: 0;
   margin: 16px;
+  border-radius: 16px;
+}
+
+.card-content {
+  flex-grow: 2;
+  margin-left: 8px;
+}
+
+.card-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    border: 1px solid black;
+    border-radius: 18px;
+    padding: 5px;
+  }
+}
+
+.card-price {
+  align-self: flex-end;
+  p {
+    margin-bottom: 0;
+    padding: 8px;
+  }
 }

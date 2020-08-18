@@ -7,3 +7,15 @@
   margin-top: 32px;
   margin-bottom: 32px;
 }
+
+@media(max-width: 992px) {
+  .con-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .con-cards {
+    grid-template-columns: 1fr;
+  }
+}

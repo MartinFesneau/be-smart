@@ -9,12 +9,12 @@
         <li> <%= prestation  %> </li>
         <% end %>
     </ul>
-    <span> @philosopher.price_per_night</span>
+    <span> <%= @philosopher.price_per_night %>€ per night</span>
   </div>
 
-  <%# <div class="photo">
+  <%# <%# <div class="photo">
     <% if @philosopher.photo.attached? %>
       <%# <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
     <%# <% end %> 
   <%# </div> 
-</div>
+</div> %>

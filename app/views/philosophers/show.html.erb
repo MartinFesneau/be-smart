@@ -2,13 +2,19 @@
   <div class="row">
     <div class="col-12 col-lg-6">
       <div class="content">
-        <h1 class="title"><%= @philosopher.last_name %></h1>
-
+        <%= link_to philosophers_path do%> 
+          <i class="fas fa-arrow-left"></i> 
+        <% end %>
+        <% if @philosopher.first_name %>
+          <h1 class="title"><%= @philosopher.first_name %> <%= @philosopher.last_name %></h1>
+        <% else %>
+          <h1 class="title"><%= @philosopher.last_name %></h1>
+        <% end %>
 
         <div class="cont-nationality d-flex align-items-baseline">
           <p class="body-strong mr-2">Nationality:</p>
           <p class="body"><%= @philosopher.nationality %></p>
-        </div>
+        </div>      
 
         <div class="cont-specialty d-flex align-items-baseline">
           <p class="body-strong mr-2">Specialty:</p>
@@ -16,43 +22,61 @@
         </div>
 
         <div class="cont-description">
-        <p class="body-strong"><i class="fas fa-quote-left"></i></p>
-          <p class="body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio vitae, nesciunt adipisci culpa debitis eos atque fugiat molestias voluptates deserunt nulla possimus dolore, a fugit?</p>
+          <p class="body-strong"><i class="fas fa-quote-left"></i></p>
+          <p class="body"><%= @philosopher.description %></p>
           <p class="body-strong text-right"><i class="fas fa-quote-right"></i></p>
         </div>
 
         <div class="cont-prestations">
           <h4 class="title">Prestations </h4>
-            <ul>
-              <% @philosopher.prestations.each do |prestation| %>
-                <li class="prestation"> <%= prestation  %> </li>
-                <% end %>
-            </ul>
+          <ul>
+            <% @philosopher.prestations.each do |prestation| %>
+              <li class="prestation"> <%= prestation  %> </li>
+            <% end %>
+          </ul>
         </div>
 
         <h3 class='title'><%= @philosopher.price_per_night%>€ per night</h3>
-        <%= link_to "Party with #{@philosopher.last_name}",'',  class:"primary-btn" %>
-    </div>
+        <%= link_to "Party with #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+      </div>
     </div>
     <div class="col-12 col-lg-6">
-      <div class="photo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parmenides.jpg/880px-Parmenides.jpg" alt="">
-    </div>
+      <div class="cont-photo">
+
+        <div class="photo">
+          <% if @philosopher.photo.attached? %>
+            <%= cl_image_tag @philosopher.photo.key %>
+          <% end %>
+        </div>
+
+        <div class="booking-form" id="book-form">
+          <div class="container-flex">
+            <div class="form-part">
+
+              <% if @philosopher.first_name %>
+                <h1 class="title">Book<%= @philosopher.first_name %> <%= @philosopher.last_name %></h1>
+              <% else %>
+                <h1 class="title"><%= @philosopher.last_name %></h1>
+              <% end %>
+
+              <div class="create-form">
+                <%= simple_form_for [ @philosopher, @reservation ] do |f| %>
+                  <%= f.input :start_date %>
+                  <%= f.input :end_date %>
+                  <%= f.input :address %>
+                  <%= f.submit class: "primary-btn" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
+       <%# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parmenides.jpg/880px-Parmenides.jpg" alt="">  %>
 
-
-
-    
-
-    
-    <%# <div class="photo">
-      <% if @philosopher.photo.attached? %>
-        <%# <%= cl_image_tag @philosopher.photo.key, height: 1200px, width: 758px, crop: fill %>
-      <%# <% end %> 
-    <%# </div>  %> 
   
 
 

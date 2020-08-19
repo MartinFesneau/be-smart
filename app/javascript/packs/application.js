@@ -27,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initMapbox } from "../plugins/init_mapbox" ;
+import { formActive } from '../components/form_active';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
+  formActive();
 });

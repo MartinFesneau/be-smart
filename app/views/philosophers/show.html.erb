@@ -37,7 +37,11 @@
         </div>
 
         <h3 class='title'><%= @philosopher.price_per_night%>€ per night</h3>
-        <%= link_to "Party with #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+        <% if @philosopher.first_name %>
+          <%= link_to "Party with #{@philosopher.first_name} #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+        <% else %>
+          <%= link_to "Party with #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+        <% end %>
       </div>
     </div>
     <div class="col-12 col-lg-6">
@@ -54,9 +58,9 @@
             <div class="form-part">
 
               <% if @philosopher.first_name %>
-                <h1 class="title">Book<%= @philosopher.first_name %> <%= @philosopher.last_name %></h1>
+                <h3 class="title">Book <%= @philosopher.first_name %><%= @philosopher.last_name %></h3>
               <% else %>
-                <h1 class="title"><%= @philosopher.last_name %></h1>
+                <h3 class="title"><%= @philosopher.last_name %></h3>
               <% end %>
 
               <div class="create-form">

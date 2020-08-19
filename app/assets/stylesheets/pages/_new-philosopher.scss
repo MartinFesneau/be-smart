@@ -1,23 +1,40 @@
 .container-flex {
   display: flex;
+  margin-bottom: 50px;
 }
 
-.form-part h1 {
-  border-bottom: 2px solid black;
-  margin-bottom: 20px;
+.title-underline {
+  margin-bottom: 21px;
 }
 
 .form-part p {
   opacity: .8;
+  margin-bottom: 35px;
 }
 
 .form-part {
   margin: 0 auto;
-  input {
-    background-color: $light-gray;
+  input:not([type="submit"]) {
+    background-color: $secondary-background-color;
+    border: none;
+  }
+  textarea {
+    background-color: $secondary-background-color;
     border: none;
   }
   input[type="file"] {
     background-color: white;
   }
+  input[type="submit"] {
+    border: none;
+    margin-top: 20px;
+  }
+}
+
+.space-top {
+  margin-top: 10px;
+}
+
+fieldset, .form-group {
+  margin-top: 25px;
 }

@@ -7,7 +7,7 @@ class Philosopher < ApplicationRecord
   has_many :users, through: :reservations
   belongs_to :user
   has_one_attached :photo
-
+  
   validates :nationality, :last_name, :specialty, :address, :prestations, :price_per_night, :description, presence: true
   validates :photo, presence: true
 

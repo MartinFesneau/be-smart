@@ -1,22 +1,70 @@
-<h1>All philosophers</h1>
+  <div class="row">
 
-<ul>
-  <% @philosophers.each do |philosopher| %>
-  <li>
-    <% if philosopher.first_name?  %>
-      <%= philosopher.first_name philosopher.last_name %>
-    <% else %>
-      <%= philosopher.last_name %>
-    <% end %>
-    <%= philosopher.description %>
-  </li>
-  <% end %>
-</ul>
+    <div class="col-12 col-lg-8 p-0">
+      <div class="container">
+        <h1 class="title">All philosophers</h1>
+        <div class="con-cards-index">
+          <% @philosophers.each do |philosopher| %>
+            <div class="card-philosopher">
 
-<div id="map"
-    style="width: 50%; height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>" >
-</div>
+              <div class="card-philosopher-photo">
+                <% if philosopher.photo.attached? %>
+                  <%= cl_image_tag philosopher.photo.key, width: 100 %>
+                <% end %>
+              </div>
 
+              <div class="card-philosopher-content">
+                <h4 class="title">
+                  <% if philosopher.first_name?  %>
+                    <%= philosopher.first_name philosopher.last_name %>
+                  <% else %>
+                    <%= philosopher.last_name %>
+                  <% end %>
+                </h4>
+
+                <ul>
+                  <li>presta</li>
+                  <li>presta</li>
+                  <li>presta</li>
+                </ul>
+                <h4 class="title">Price</h4>
+              </div>
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4 p-0">
+      <div id="map"
+          style="width: 100%; height: 100vh;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key= "<%= ENV['MAPBOX_API_KEY'] %>" >
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+          <ul>
+            <% @philosophers.each do |philosopher| %>
+            <li>
+              <% if philosopher.first_name?  %>
+                <%= philosopher.first_name philosopher.last_name %>
+              <% else %>
+                <%= philosopher.last_name %>
+              <% end %>
+              <%= philosopher.description %>
+            </li>
+            <% end %>
+          </ul>
 

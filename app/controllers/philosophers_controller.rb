@@ -1,7 +1,14 @@
 class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @philosophers = Philosopher.all
+    @philosophers = Philosopher.geocoded
+
+    @markers = @philosophers.map do |philosopher|
+      {
+        lat: philosopher.latitude,
+        lng: philosopher.longitude
+      }
+    end
   end
 
   def new
@@ -27,8 +34,8 @@ class PhilosophersController < ApplicationController
 
   def philosopher_params
     params.require(:philosopher).permit(
-      :first_name, :last_name, :nationality, :birthday,
-      :specialty, :available_location, :price_per_night,
+      :first_name, :last_name, :nationality,
+      :specialty, :address, :price_per_night,
       :description, :photo, prestations: []
     )
   end

@@ -28,7 +28,7 @@ puts 'Creating philosopher'
                       last_name: Faker::GreekPhilosophers.name,
                       birthday: Faker::Date.between(from: '0001-01-01', to: '1000-01-01'),
                       specialty: Faker::Educator.subject,
-                      available_location: ["Athens", "Heraklion", "Rhodes"].sample,
+                      address: ["Athens", "Heraklion", "Rhodes"].sample,
                       price_per_night: (25..75).to_a.sample,
                       description: Faker::GreekPhilosophers.quote,
                       prestations: Philosopher::PRESTATIONS.sample(2),

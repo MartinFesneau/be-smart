@@ -37,23 +37,40 @@
         </div>
 
         <h3 class='title'><%= @philosopher.price_per_night%>€ per night</h3>
-        <%= link_to "Party with #{@philosopher.last_name}",'',  class:"primary-btn", id:"book-btn" %>
+        <%= link_to "Party with #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <div class="photo">
-        <% if @philosopher.photo.attached? %>
-          <%= cl_image_tag @philosopher.photo.key %>
-        <% end %>
+      <div class="cont-photo">
+
+        <div class="photo">
+          <% if @philosopher.photo.attached? %>
+            <%= cl_image_tag @philosopher.photo.key %>
+          <% end %>
+        </div>
+
+        <div class="booking-form" id="book-form">
+          <div class="container-flex">
+            <div class="form-part">
+
+              <% if @philosopher.first_name %>
+                <h1 class="title">Book<%= @philosopher.first_name %> <%= @philosopher.last_name %></h1>
+              <% else %>
+                <h1 class="title"><%= @philosopher.last_name %></h1>
+              <% end %>
+
+              <div class="create-form">
+                <%= simple_form_for [ @philosopher, @reservation ] do |f| %>
+                  <%= f.input :start_date %>
+                  <%= f.input :end_date %>
+                  <%= f.input :address %>
+                  <%= f.submit class: "primary-btn" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="booking-form">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptatum quas velit labore, omnis vero necessitatibus saepe quidem harum similique, sequi tenetur cumque ea placeat!</p>
-         <%# <%= simple_form_for [ @philosopher, @reservation ] do |f| %>
-            <%# <%= f.input :first_name %>
-            <%# <%= f.input :last_name %>
-            <%# <%= f.input :specialty %>
-            <%# <%= f.input :nationality %> %> %> %> %> %>
     </div>
   </div>
 </div>

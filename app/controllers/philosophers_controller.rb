@@ -11,6 +11,10 @@ class PhilosophersController < ApplicationController
     end
   end
 
+  def list_owned
+    @owned_philosophers = Philosopher.where(user_id: current_user.id)
+  end
+
   def new
     @philosopher = Philosopher.new
   end

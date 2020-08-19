@@ -32,7 +32,42 @@
 }
 
 .card-philosopher {
-  background-color: red;
+  display: flex;
+  background-color: $main-background-color;
   height: 192px;
   max-width: 100%;
+  border-radius: 16px;
+  box-shadow: $box-shadow-color;
+  margin-bottom: 16px;
+}
+
+.card-philosopher-photo {
+  img {
+    border-radius: 16px 0 0 16px;
+    height: 100%;
+    width: 192px;
+    object-fit: cover;
+  }
+}
+
+.card-philosopher-content {
+  padding: 24px;
+  width: 100%;
+
+  .prestation:hover {
+    box-shadow: none;
+  }
+
+  h3 {
+    margin-bottom: 24px;
+  }
+
+  ul {
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    margin: 0;
+    text-align: right;
+  }
 }

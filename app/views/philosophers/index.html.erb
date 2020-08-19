@@ -5,32 +5,33 @@
         <h1 class="title">All philosophers</h1>
         <div class="con-cards-index">
           <% @philosophers.each do |philosopher| %>
-            <div class="card-philosopher">
+            <%= link_to philosopher_path(philosopher) do %>
+              <div class="card-philosopher">
 
-              <div class="card-philosopher-photo">
-                <% if philosopher.photo.attached? %>
-                  <%= cl_image_tag philosopher.photo.key, width: 100 %>
-                <% end %>
-              </div>
-
-              <div class="card-philosopher-content">
-                <h4 class="title">
-                  <% if philosopher.first_name?  %>
-                    <%= philosopher.first_name philosopher.last_name %>
-                  <% else %>
-                    <%= philosopher.last_name %>
+                <div class="card-philosopher-photo">
+                  <% if philosopher.photo.attached? %>
+                    <%= cl_image_tag philosopher.photo.key, crop: :fill %>
                   <% end %>
-                </h4>
+                </div>
 
-                <ul>
-                  <li>presta</li>
-                  <li>presta</li>
-                  <li>presta</li>
-                </ul>
-                <h4 class="title">Price</h4>
+                <div class="card-philosopher-content">
+                  <h3 class="title">
+                    <% if philosopher.first_name?  %>
+                      <%= philosopher.first_name philosopher.last_name %>
+                    <% else %>
+                      <%= philosopher.last_name %>
+                    <% end %>
+                  </h3>
+
+                  <ul>
+                    <% philosopher.prestations.each do |prestation| %>
+                      <li class="prestation"><%= prestation %></li>
+                    <% end %>
+                  </ul>
+                  <h4 class="title">$<%= philosopher.price_per_night %>/night</h4>
+                </div>
               </div>
-
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -45,26 +46,4 @@
     </div>
 
   </div>
-
-
-
-
-
-
-
-
-
-
-          <ul>
-            <% @philosophers.each do |philosopher| %>
-            <li>
-              <% if philosopher.first_name?  %>
-                <%= philosopher.first_name philosopher.last_name %>
-              <% else %>
-                <%= philosopher.last_name %>
-              <% end %>
-              <%= philosopher.description %>
-            </li>
-            <% end %>
-          </ul>
 

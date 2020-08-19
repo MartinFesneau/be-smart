@@ -8,7 +8,7 @@
 }
 
 .form-part p {
-  opacity: .8;
+  color: $medium-text-color;
   margin-bottom: 35px;
 }
 
@@ -18,13 +18,15 @@
   input:not([type="submit"]) {
     background-color: $secondary-background-color;
     border: none;
+    border-radius: 8px;
   }
   textarea {
     background-color: $secondary-background-color;
     border: none;
+    border-radius: 8px;
   }
   input[type="file"] {
-    background-color: white;
+    background-color: $main-background-color;
   }
   input[type="submit"] {
     border: none;

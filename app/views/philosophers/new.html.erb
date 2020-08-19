@@ -8,9 +8,8 @@
         <%= simple_form_for(@philosopher) do |f| %>
             <%= f.input :first_name %>
             <%= f.input :last_name %>
-            <%= f.input :specialty %>
+            <%= f.input :specialty, collection: Philosopher::SPECIALTIES %>
             <%= f.input :nationality %>
-            <%= f.input :birthday %>
             <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
             <%= f.input :address %>
             <%= f.input :price_per_night %>

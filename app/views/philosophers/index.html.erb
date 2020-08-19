@@ -17,7 +17,7 @@
                 <div class="card-philosopher-content">
                   <h3 class="title">
                     <% if philosopher.first_name? %>
-                      <%= philosopher.first_name philosopher.last_name %>
+                      <%= philosopher.first_name %> <%= philosopher.last_name %>
                     <% else %>
                       <%= philosopher.last_name %>
                     <% end %>

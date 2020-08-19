@@ -1,7 +1,14 @@
 class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
-    @philosophers = Philosopher.all
+    @philosophers = Philosopher.geocoded
+
+    @markers = @philosophers.map do |philosopher|
+      {
+        lat: philosopher.latitude,
+        lng: philosopher.longitude
+      }
+    end
   end
 
   def new

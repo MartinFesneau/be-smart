@@ -29,6 +29,12 @@ class PhilosophersController < ApplicationController
     end
   end
 
+  def destroy
+    @philosopher = Pilosopher.find(params[:id])
+    @philosopher.destroy
+    redirect_to philosophers_path
+  end
+
   private
 
   def philosopher_params

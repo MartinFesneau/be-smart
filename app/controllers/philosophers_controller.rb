@@ -33,7 +33,7 @@ class PhilosophersController < ApplicationController
 
   def philosopher_params
     params.require(:philosopher).permit(
-      :first_name, :last_name, :nationality, :birthday,
+      :first_name, :last_name, :nationality,
       :specialty, :address, :price_per_night,
       :description, :photo, prestations: []
     )

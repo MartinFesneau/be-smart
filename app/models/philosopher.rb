@@ -1,5 +1,6 @@
 class Philosopher < ApplicationRecord
   PRESTATIONS = ["Debate", "Party", "Dance", "Balloons", "Striptease"]
+  SPECIALTIES = ["Aesthetics", "Epistemology", "Ethics", "Logic"]
 
   belongs_to :user
   has_many :reservations
@@ -7,7 +8,7 @@ class Philosopher < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
 
-  validates :nationality, :last_name, :birthday, :specialty, :available_location, :prestations, :price_per_night, :description, presence: true
+  validates :nationality, :last_name, :birthday, :specialty, :address, :prestations, :price_per_night, :description, presence: true
   validates :photo, presence: true
 
   geocoded_by :address

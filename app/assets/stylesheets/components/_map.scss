@@ -1,5 +1,10 @@
+#map {
+  position: sticky;
+  top: 0;
+}
+
 .mapboxgl-popup {
-  max-width: 200px;
+  width: 240px;
 }
 
 .mapboxgl-popup-close-button {
@@ -20,6 +25,8 @@
 .popup-photo {
   img {
     border-radius: 16px 16px 0 0;
+    width: 100%;
+    object-fit: cover;
   }
 }
 

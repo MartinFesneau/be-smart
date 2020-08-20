@@ -1,0 +1,38 @@
+<div class="col-12 col-lg-7 p-0">
+  <div class="container">
+    <div class="cont-index-philosopher">
+      <h1 class="title">My philosophers</h1>
+      <div class="con-cards-index">
+        <% @owned_philosophers.each do |philosopher| %>
+          <%= link_to philosopher_path(philosopher) do %>
+            <div class="card-philosopher">
+
+              <div class="card-philosopher-photo">
+                <% if philosopher.photo.attached? %>
+                  <%= cl_image_tag philosopher.photo.key, crop: :fill %>
+                <% end %>
+              </div>
+
+              <div class="card-philosopher-content">
+                <h3 class="title">
+                  <% if philosopher.first_name? %>
+                    <%= philosopher.first_name %> <%= philosopher.last_name %>
+                  <% else %>
+                    <%= philosopher.last_name %>
+                  <% end %>
+                </h3>
+
+                <ul>
+                  <% philosopher.prestations.each do |prestation| %>
+                    <li class="prestation"><%= prestation %></li>
+                  <% end %>
+                </ul>
+                <h4 class="title">$<%= philosopher.price_per_night %>/night</h4>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

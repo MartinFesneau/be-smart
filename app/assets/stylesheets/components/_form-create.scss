@@ -1,0 +1,56 @@
+.con-form {
+  padding: 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  background-color: $secondary-background-color;
+  border-radius: 24px;
+  box-shadow: $box-shadow-color;
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+
+  .primary-btn {
+    border: none;
+    width: 100%;
+  }
+
+  .default-input:focus {
+    border: none;
+    outline: 0;
+    box-shadow: $box-shadow-form;
+  }
+
+  .con-prestations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .prestation-choice {
+      border: 1px $border-color solid;
+      padding: 8px 16px;
+      border-radius: 24px;
+      color: $medium-text-color;
+      margin-right: 16px;
+      margin-bottom: 16px;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $main-background-color;
+        border-color: $primary-color;
+      }
+    }
+  }
+}

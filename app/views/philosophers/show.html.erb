@@ -53,12 +53,12 @@
           <% end %>
         </div>
 
-        <div class="booking-form active" id="book-form">
+        <div class="booking-form" id="book-form">
           <div class="container-flex">
             <div class="form-part">
 
               <% if @philosopher.first_name %>
-                <h3 class="title">Book <%= @philosopher.first_name %><%= @philosopher.last_name %></h3>
+                <h3 class="title">Book <%= @philosopher.first_name %> <%= @philosopher.last_name %></h3>
               <% else %>
                 <h3 class="title"><%= @philosopher.last_name %></h3>
               <% end %> 

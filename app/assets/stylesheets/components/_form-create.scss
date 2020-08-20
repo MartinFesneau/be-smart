@@ -19,4 +19,11 @@
     border: none;
     width: 100%;
   }
+
+  .default-input:focus {
+    border: none;
+    outline: 0;
+    box-shadow: $box-shadow-form;
+  }
+
 }

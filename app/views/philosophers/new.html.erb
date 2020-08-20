@@ -5,25 +5,25 @@
         <h1 class="title">New philosopher</h1>
         <p class="body">Add your philosopher and let others enjoy his wisdom.</p>
         <div class="con-form-inputs">
-          <%= simple_form_for(@philosopher) do |f| %>
+          <%= simple_form_for @philosopher do |f| %>
             <div class="row">
               <div class="col-12 col-lg-6">
-                <%= f.input :first_name, placeholder: "Fisrt name" %>
+                <%= f.input :first_name, placeholder: "Fisrt name", input_html: { class: "default-input" } %>
               </div>
               <div class="col-12 col-lg-6">
-                <%= f.input :last_name, placeholder: "Last name" %>
+                <%= f.input :last_name, placeholder: "Last name", input_html: { class: "default-input" } %>
               </div>
             </div>
             <%= f.input :specialty, as: :radio_buttons, collection: Philosopher::SPECIALTIES, wrapper: :vertical_collection_inline %>
-            <%= f.input :nationality, placeholder: "Greek" %>
+            <%= f.input :nationality, placeholder: "Greek", input_html: { class: "default-input" } %>
             <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
-            <%= f.input :address %>
+            <%= f.input :address, placeholder: "Enter an address", input_html: { class: "default-input" } %>
             <div class="row">
               <div class="col-12 col-lg-6">
-                <%= f.input :price_per_night, label: "Price /night (€)", placeholder: "49" %>
+                <%= f.input :price_per_night, label: "Price /night (€)", placeholder: "49", input_html: { class: "default-input" } %>
               </div>
             </div>
-            <%= f.input :description, placeholder: "Tell us your story..." %>
+            <%= f.input :description, placeholder: "Tell us your story...", input_html: { class: "default-input" } %>
             <%= f.input :photo, as: :file %>
             <%= f.submit class: "primary-btn" %>
           <% end %>

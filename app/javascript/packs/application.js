@@ -36,9 +36,9 @@ import { dynamicPrice } from "../components/dynamic_price";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initMapbox();
   initAutocomplete();
   formActive();
+  initMapbox();
   prestationActive();
   dynamicPrice();
 });

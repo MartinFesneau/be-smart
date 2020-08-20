@@ -8,18 +8,22 @@
           <%= simple_form_for(@philosopher) do |f| %>
             <div class="row">
               <div class="col-12 col-lg-6">
-                <%= f.input :first_name %>
+                <%= f.input :first_name, placeholder: "Fisrt name" %>
               </div>
               <div class="col-12 col-lg-6">
-                <%= f.input :last_name %>
+                <%= f.input :last_name, placeholder: "Last name" %>
               </div>
             </div>
-            <%= f.input :specialty, collection: Philosopher::SPECIALTIES %>
-            <%= f.input :nationality %>
+            <%= f.input :specialty, as: :radio_buttons, collection: Philosopher::SPECIALTIES, wrapper: :vertical_collection_inline %>
+            <%= f.input :nationality, placeholder: "Greek" %>
             <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
             <%= f.input :address %>
-            <%= f.input :price_per_night %>
-            <%= f.input :description %>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <%= f.input :price_per_night, label: "Price /night (€)", placeholder: "49" %>
+              </div>
+            </div>
+            <%= f.input :description, placeholder: "Tell us your story..." %>
             <%= f.input :photo, as: :file %>
             <%= f.submit class: "primary-btn" %>
           <% end %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard/philosophers', to: 'philosophers#list_owned'
+  get 'dashboard/reservations', to: 'reservations#my_reservations'
   # add routes for orders
 
   devise_for :users

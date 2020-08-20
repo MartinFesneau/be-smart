@@ -61,16 +61,15 @@
                 <h3 class="title">Book <%= @philosopher.first_name %><%= @philosopher.last_name %></h3>
               <% else %>
                 <h3 class="title"><%= @philosopher.last_name %></h3>
-              <% end %>
+              <% end %> 
 
               <div class="create-form">
                 <%= simple_form_for [ @philosopher, @reservation ] do |f| %>
-                  <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" } %>
-                  <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
-                  <%= f.input :address, id: "address-field" %>
-                  <%#= f.input :total_price %>
+                  <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }, placeholder: "Start" %>
+                  <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" }, placeholder: "End" %>
+                  <%= f.input :address %>
                   <div>
-                  <h4 class="title mt-1"><span class="d-none" id="reservation_total_price"></span></h4>  
+                    <h4 class="title mt-1"><span class="d-none" id="reservation_total_price"></span></h4>  
                   </div>
                   <%= f.submit class: "primary-btn" %>
                 <% end %>
@@ -82,9 +81,3 @@
     </div>
   </div>
 </div>
-
-       <%# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Parmenides.jpg/880px-Parmenides.jpg" alt="">  %>
-
-  
-
-

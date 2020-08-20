@@ -9,6 +9,16 @@ class PhilosophersController < ApplicationController
         lng: philosopher.longitude
       }
     end
+
+    if params[:specialty].present? && params[:location].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location])
+    elsif params[:specialty].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty])
+    elsif params[:location].present?
+      @philosophers = Philosopher.geocoded.search_by_location(params[:location])
+    else
+      @philosophers
+    end
   end
 
   def list_owned

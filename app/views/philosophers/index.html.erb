@@ -4,6 +4,31 @@
       <div class="container">
         <div class="cont-index-philosopher">
           <h1 class="title">All philosophers</h1>
+
+           <%= form_tag philosophers_path, method: :get do %>
+          <div class="form-group-home">
+              <div class="location-field">
+                <%= text_field_tag :location,
+                  params[:location],
+                  class: "form-control",
+                  placeholder: "Where?"
+                %>
+              </div>
+              <div class="specialty-field">
+                  <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]) %>
+              </div>
+              <div class="prestations-field">
+                <%= text_field_tag :prestations,
+                  params[:prestations],
+                  class: "form-control",
+                  placeholder: "What prestations?"
+                %>
+              </div>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          </div>
+          <% end %>
+
+
           <div class="con-cards-index">
             <% @philosophers.each do |philosopher| %>
               <%= link_to philosopher_path(philosopher) do %>

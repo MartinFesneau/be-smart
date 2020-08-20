@@ -1,0 +1,9 @@
+<div class="popup-photo">
+  <% if philosopher.photo.attached? %>
+    <%= cl_image_tag philosopher.photo.key, crop: :fill, height:200 %>
+  <% end %>
+</div>
+<div class="popup-content">
+  <p class="body"><%= philosopher.last_name %></p>
+  <p class="body-strong"><%= philosopher.price_per_night %>€/night</p>
+</div>

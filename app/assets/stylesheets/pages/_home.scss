@@ -19,3 +19,30 @@
     grid-template-columns: 1fr;
   }
 }
+
+.form-group-home {
+  display: flex;
+}
+
+#search-btn-home {
+  padding: 8px 16px;
+}
+
+.specialty-field, .location-field {
+  margin-right: 10px;
+  input {
+    border-radius: 25px;
+  }
+  ::placeholder {
+    opacity: .5;
+  }
+}
+
+#specialty {
+  border-radius: 25px;
+  appearance: none;
+  background-image: url(https://cdn1.iconfinder.com/data/icons/ios-11-ui-elements-vol-1/29/25_dropdown_menu_down_arrow-512.png);
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: 1em auto, 100%;
+}

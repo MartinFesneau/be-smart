@@ -15,14 +15,10 @@
                 %>
               </div>
               <div class="specialty-field">
-                  <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]) %>
+                  <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]), class: "form-control", prompt: 'Specialty' %>
               </div>
               <div class="prestations-field">
-                <%= text_field_tag :prestations,
-                  params[:prestations],
-                  class: "form-control",
-                  placeholder: "What prestations?"
-                %>
+                <%= select_tag "prestations", options_for_select(Philosopher::PRESTATIONS, params[:prestations]), class: "form-control", prompt: 'Prestations', multiple: true %>
               </div>
             <%= submit_tag "Search", class: "btn btn-primary" %>
           </div>

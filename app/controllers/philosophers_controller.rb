@@ -6,7 +6,8 @@ class PhilosophersController < ApplicationController
     @markers = @philosophers.map do |philosopher|
       {
         lat: philosopher.latitude,
-        lng: philosopher.longitude
+        lng: philosopher.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { philosopher: philosopher })
       }
     end
   end

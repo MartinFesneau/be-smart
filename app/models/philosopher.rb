@@ -32,13 +32,16 @@ class Philosopher < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  def available?(start_date, end_date)
-    philosopher.reservations.each do |reservation|
-      if start_date >= reservation.start_date && start_date <= reservation.end_date || end_date >= reservation.start_date && end_date <= reservation.end_date
-        return false
-      end
+  def self.available_on(start_date, end_date)
+    select { |philosopher| philosopher.available?(start_date, end_date) }
+  end
 
-      return true
+  def available?(start_date, end_date)
+    reservations.each do |reservation|
+      return !(start_date >= reservation.start_date &&
+        start_date <= reservation.end_date ||
+        end_date >= reservation.start_date &&
+        end_date <= reservation.end_date)
     end
   end
 end

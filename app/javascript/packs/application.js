@@ -29,6 +29,7 @@ import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox" ;
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { formActive } from '../components/form_active';
+import { prestationActive } from '../components/prestation_active';
 import "../plugins/flatpickr";
 import { dynamicPrice } from "../components/dynamic_price";
 
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   formActive();
   initMapbox();
+  prestationActive();
   dynamicPrice();
 });

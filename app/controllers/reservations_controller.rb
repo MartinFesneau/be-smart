@@ -12,17 +12,14 @@ class ReservationsController < ApplicationController
     @reservation.philosopher = @philosopher
     @reservation.user = @user
     if @reservation.save
-      redirect_to philosophers_path
+      redirect_to dashboard_reservations_path
     else
       redirect_to philosopher_path(@reservation.philosopher)
     end
   end
 
-
-
-
-
-  def index
+  def my_reservations
+    @my_reservations = Reservation.where(user_id: current_user.id)
   end
 
   def reservation_params

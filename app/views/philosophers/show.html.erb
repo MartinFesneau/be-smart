@@ -61,7 +61,7 @@
                 <h3 class="title">Book <%= @philosopher.first_name %><%= @philosopher.last_name %></h3>
               <% else %>
                 <h3 class="title"><%= @philosopher.last_name %></h3>
-              <% end %>
+              <% end %> 
 
               <div class="create-form">
                 <%= simple_form_for [ @philosopher, @reservation ] do |f| %>

@@ -10,12 +10,20 @@ class PhilosophersController < ApplicationController
       }
     end
 
-    if params[:specialty].present? && params[:location].present?
-      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location])
-    elsif params[:specialty].present?
-      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty])
+    if params[:specialty].present? && params[:location].present? && params[:prestations].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location]).search_by_prestations(params[:prestations])
+    elsif params[:specialty].present? && params[:location].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_specialty(params[:location])
+    elsif params[:specialty].present? && params[:prestations].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_prestations(params[:prestations])
+    elsif params[:prestations].present? && params[:location].present?
+      @philosophers = Philosopher.geocoded.search_by_prestations(params[:prestations]).search_by_location(params[:location])
     elsif params[:location].present?
       @philosophers = Philosopher.geocoded.search_by_location(params[:location])
+    elsif params[:specialty].present?
+      @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty])
+    elsif params[:prestations].present?
+      @philosophers = Philosopher.geocoded.search_by_prestations(params[:prestations])
     else
       @philosophers
     end

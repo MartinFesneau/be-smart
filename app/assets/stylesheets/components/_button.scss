@@ -8,10 +8,31 @@
   font-weight: $semi-bold;
   border-radius: 32px;
   border: none;
+  max-height: 57px;
 
   &:hover {
     text-decoration: none;
     color: $main-background-color;
     background-color: $primary-hover;
+  }
+}
+
+.secondary-btn {
+  display: inline-block;
+  padding: 16px 24px;
+  background-color: $medium-text-color;
+  text-decoration: none;
+  color: white;
+  font-size: $p;
+  font-weight: $semi-bold;
+  border-radius: 32px;
+  border: none;
+  max-height: 57px;
+  opacity: .5;
+
+  &:hover {
+    text-decoration: none;
+    color: $main-background-color;
+    opacity: 1;
   }
 }

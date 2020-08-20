@@ -14,6 +14,12 @@ class Philosopher < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 
+  pg_search_scope :search_by_prestations,
+                  against: [:prestations],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   belongs_to :user
   has_many :reservations
   has_many :users, through: :reservations

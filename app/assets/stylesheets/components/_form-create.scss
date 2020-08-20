@@ -26,4 +26,28 @@
     box-shadow: $box-shadow-form;
   }
 
+  .con-prestations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .prestation {
+      color: $medium-text-color;
+      margin-right: 16px;
+      margin-bottom: 16px;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $main-background-color;
+        border-color: $primary-color;
+      }
+    }
+  }
 }

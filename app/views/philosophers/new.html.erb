@@ -16,7 +16,18 @@
             </div>
             <%= f.input :specialty, as: :radio_buttons, collection: Philosopher::SPECIALTIES, wrapper: :vertical_collection_inline %>
             <%= f.input :nationality, placeholder: "Greek", input_html: { class: "default-input" } %>
-            <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
+            <%# f.input :prestations, collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
+            <fieldset class="form-group check_boxes required philosopher_prestations">
+
+              <legend class="col-form-label pt-0">Prestations <abbr title="required">*</abbr></legend>
+              <div class="con-prestations">
+                <% Philosopher::PRESTATIONS.each do |prestation| %>
+                  <input class="d-none" type="checkbox" value="<%= prestation %>" name="philosopher[prestations][]" id="philosopher_prestations_<%= prestation %>">
+
+                  <label class="prestation" for="philosopher_prestations_<%= prestation %>"><%= prestation %></label>
+                <% end %>
+              </div>
+            </fieldset>
             <%= f.input :address, placeholder: "Enter an address", input_html: { class: "default-input" } %>
             <div class="row">
               <div class="col-12 col-lg-6">

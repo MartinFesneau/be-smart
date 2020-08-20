@@ -31,6 +31,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { formActive } from '../components/form_active';
 import "../plugins/flatpickr";
 import { dynamicPrice } from "../components/dynamic_price";
+import { initFlatpickr } from "../plugins/flatpickr";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   formActive();
   dynamicPrice();
+  initFlatpickr();
 });

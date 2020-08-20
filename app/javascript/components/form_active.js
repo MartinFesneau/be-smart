@@ -4,11 +4,12 @@
 const formActive = () => {
   const bookBtn = document.getElementById("book-btn");
   const bookingForm = document.getElementById("book-form");
-
-  bookBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    bookingForm.classList.toggle("active");
-  })
+  if (bookBtn) {
+    bookBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      bookingForm.classList.toggle("active");
+    })
+  }
 }
 
 export { formActive }

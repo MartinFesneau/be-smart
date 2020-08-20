@@ -32,7 +32,10 @@
     align-items: center;
     flex-wrap: wrap;
 
-    .prestation {
+    .prestation-choice {
+      border: 1px $border-color solid;
+      padding: 8px 16px;
+      border-radius: 24px;
       color: $medium-text-color;
       margin-right: 16px;
       margin-bottom: 16px;

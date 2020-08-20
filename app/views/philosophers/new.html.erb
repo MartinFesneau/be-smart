@@ -24,7 +24,7 @@
                 <% Philosopher::PRESTATIONS.each do |prestation| %>
                   <input class="d-none" type="checkbox" value="<%= prestation %>" name="philosopher[prestations][]" id="philosopher_prestations_<%= prestation %>">
 
-                  <label class="prestation" for="philosopher_prestations_<%= prestation %>"><%= prestation %></label>
+                  <label class="prestation-choice" for="philosopher_prestations_<%= prestation %>"><%= prestation %></label>
                 <% end %>
               </div>
             </fieldset>

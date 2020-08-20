@@ -3,14 +3,6 @@ class PhilosophersController < ApplicationController
   def index
     @philosophers = Philosopher.geocoded
 
-    @markers = @philosophers.map do |philosopher|
-      {
-        lat: philosopher.latitude,
-        lng: philosopher.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { philosopher: philosopher })
-      }
-    end
-
     if params[:specialty].present? && params[:location].present? && params[:prestations].present?
       @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location]).search_by_prestations(params[:prestations])
     elsif params[:specialty].present? && params[:location].present?
@@ -27,6 +19,14 @@ class PhilosophersController < ApplicationController
       @philosophers = Philosopher.geocoded.search_by_prestations(params[:prestations])
     else
       @philosophers
+    end
+
+    @markers = @philosophers.map do |philosopher|
+      {
+        lat: philosopher.latitude,
+        lng: philosopher.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { philosopher: philosopher })
+      }
     end
   end
 

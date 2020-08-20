@@ -1,13 +1,19 @@
 <div class="container">
-  <div class="container-flex">
-    <div class="form-part">
-      <h1 class="title">Create a new philosopher.</h1>
-      <span class="title-underline"></span>
-      <p class="body-strong">Add your philosopher and let others enjoy his wisdom.</p>
-      <div class="create-form">
-        <%= simple_form_for(@philosopher) do |f| %>
-            <%= f.input :first_name %>
-            <%= f.input :last_name %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="con-form">
+        <h1 class="title">New philosopher</h1>
+        <p class="body">Add your philosopher and let others enjoy his wisdom.</p>
+        <div class="con-form-inputs">
+          <%= simple_form_for(@philosopher) do |f| %>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <%= f.input :first_name %>
+              </div>
+              <div class="col-12 col-lg-6">
+                <%= f.input :last_name %>
+              </div>
+            </div>
             <%= f.input :specialty, collection: Philosopher::SPECIALTIES %>
             <%= f.input :nationality %>
             <%= f.input :prestations, id: "prestations", collection: Philosopher::PRESTATIONS, input_html: { multiple: true}, include_hidden: false, as: :check_boxes %>
@@ -16,8 +22,14 @@
             <%= f.input :description %>
             <%= f.input :photo, as: :file %>
             <%= f.submit class: "primary-btn" %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+

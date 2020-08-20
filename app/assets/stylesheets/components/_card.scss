@@ -76,10 +76,19 @@
     margin-bottom: 8px;
     }
   }
+}
 
+.card-philosopher-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 16px;
   h4 {
     margin: 0;
-    margin-top: 16px;
     text-align: right;
+  }
+
+  h5 {
+    color: $medium-text-color;
   }
 }

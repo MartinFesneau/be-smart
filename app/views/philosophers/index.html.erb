@@ -23,13 +23,15 @@
                         <%= philosopher.last_name %>
                       <% end %>
                     </h3>
-
                     <ul>
                       <% philosopher.prestations.each do |prestation| %>
                         <li class="prestation"><%= prestation %></li>
                       <% end %>
                     </ul>
-                    <h4 class="title">$<%= philosopher.price_per_night %>/night</h4>
+                    <div class="card-philosopher-footer">
+                      <h5 class="title"><%= philosopher.nationality %> · <%= philosopher.specialty %></h5>
+                      <h4 class="title">$<%= philosopher.price_per_night %>/night</h4>
+                    </div>
                   </div>
                 </div>
               <% end %>

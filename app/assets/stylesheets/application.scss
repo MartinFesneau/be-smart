@@ -24,6 +24,12 @@ body {
   color: $high-text-color;
 }
 
+// -- Min height content --
+
+.page-content {
+  min-height: calc(100vh - 180px);
+}
+
 // -- Typographie spec --
 h1.title {
   font-size: $h1;
@@ -79,3 +85,4 @@ p.body-small-strong {
   font-weight: $semi-bold;
   line-height: 20px;
 }
+

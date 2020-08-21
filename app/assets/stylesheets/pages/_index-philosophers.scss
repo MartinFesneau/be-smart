@@ -14,3 +14,62 @@
     color: $high-text-color;
   }
 }
+
+
+
+.form-group-home {
+  
+  fieldset {
+    margin-bottom: 0px;
+    }
+
+  .con-prestations {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    .prestation-choice {
+      border: 1px $border-color solid;
+      padding: 8px 16px;
+      border-radius: 24px;
+      color: $medium-text-color;
+      margin-right: 16px;
+      margin-bottom: 16px;
+  
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+        cursor: pointer;
+      }
+  
+      &.active {
+        background-color: $primary-color;
+        color: $main-background-color;
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .primary-btn {
+    padding: 8px 16px;
+    font-weight: $regular;
+    margin-right: 8px;
+  }
+
+  .reset-search {
+    text-decoration: none;
+    font-size: $p;
+    line-height: 24px;
+    color: $medium-text-color;
+
+    &:hover {
+      color: $high-text-hover;
+    }
+  }
+}
+#specialty {
+  max-width: 250px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}

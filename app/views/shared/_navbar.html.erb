@@ -7,15 +7,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <% if controller.controller_name == "philosophers" && controller.action_name == "index" %>
-    <div class="location-field">
-                <%= text_field_tag :location,
-                  params[:location],
-                  class: "form-control",
-                  placeholder: "Where?"
-                %>
-              </div>
-  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto d-flex align-items-baseline">

@@ -34,7 +34,6 @@ import "../plugins/flatpickr";
 import { dynamicPrice } from "../components/dynamic_price";
 import { initFlatpickr } from "../plugins/flatpickr";
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initAutocomplete();

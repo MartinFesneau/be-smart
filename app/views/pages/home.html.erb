@@ -2,21 +2,19 @@
   <div class="container">
     <h1 class="title">Enjoy wisdom</h1>
     <p class="body-strong">Rent a philosopher and enjoy little wisdom nuggets dropped at your feet.</p>
-    <%= form_tag philosophers_path, method: :get do %>
-    <div class="form-group-home">
-        <div class="location-field">
-          <%= text_field_tag :location,
-            params[:location],
-            class: "form-control",
-            placeholder: "Where?"
-          %>
-        </div>
-        <div class="specialty-field">
-          <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]), class: "form-control", prompt: 'Specialty' %>
-        </div>
-      <%= submit_tag "Search", class: "primary-btn", id: "search-btn-home" %>
-    </div>
-    <% end %>
+
+
+        <%= simple_form_for :search, url: philosophers_path, method: :get do |f| %>
+            <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }, placeholder: "Start", label: "Period" %>
+            <%= f.input :location, id: "location" %>
+            <%= f.submit class: "primary-btn" %>
+        <% end %>
+
+
+
+
+
+
   </div>
 </div>
 

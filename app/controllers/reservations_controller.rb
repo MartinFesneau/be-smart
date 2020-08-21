@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  def new 
+  def new
     @philosopher = Philosopher.find(params[:philosopher_id])
     @reservation = Reservation.new()
   end

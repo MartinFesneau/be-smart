@@ -15,7 +15,7 @@ class PhilosophersController < ApplicationController
     @philosophers = @philosophers.search_by_location(params[:location]) if params[:location].present?
     @philosophers = @philosophers.search_by_prestations(params[:prestations]) if params[:location].present?
 
-    @philosophers = @philosophers.available_on?(params[:start_date], params[:end_date]) if params[start_date].present? && params[end_date].present?
+    @philosophers = @philosophers.available_on?(DateTime.parse(params[:start_date]), DateTime.parse(params[:end_date])) if params[:start_date].present? && params[:end_date].present?
 
     # if params[:specialty].present? && params[:location].present? && params[:prestations].present?
     #   @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location]).search_by_prestations(params[:prestations])

@@ -12,6 +12,7 @@
                   id: "search_location",
                   placeholder: "Where?"
                 %>
+                <input id="start_date" type="text" name="start_date" value="<%= params['start_date'] %>" hidden="true">
               </div>
               <div class="specialty-field">
                   <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]), class: "form-control", prompt: 'Specialty' %>

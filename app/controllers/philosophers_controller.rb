@@ -2,9 +2,9 @@ class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @philosophers = Philosopher.geocoded
-    
-    start_date = params['search']['start_date'].split('to')[0].strip
-    end_date = params['search']['start_date'].split('to')[1].strip
+
+    @start_date = params['start_date'].split('to')[0].strip
+    @end_date = params['start_date'].split('to')[1].strip
 
     @markers = @philosophers.map do |philosopher|
       {
@@ -15,9 +15,8 @@ class PhilosophersController < ApplicationController
     end
 
     @philosophers = @philosophers.search_by_location(params[:location]) if params[:location].present?
-    @philosophers = @philosophers.search_by_prestations(params[:prestations]) if params[:location].present?
-    @philosophers = @philosophers.available_on?(DateTime.parse(start_date), DateTime.parse(end_date)) if start_date.present? && end_date.present?
-
+    @philosophers = @philosophers.search_by_prestations(params[:prestations]) if params[:prestations].present?
+    @philosophers = @philosophers.available_on?(DateTime.parse(@start_date), DateTime.parse(@end_date)) if params['start_date'].present?
   end
 
   def list_owned

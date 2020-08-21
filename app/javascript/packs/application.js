@@ -29,11 +29,17 @@ import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox" ;
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { formActive } from '../components/form_active';
-import "../plugins/flatpickr"
+import { prestationActive } from '../components/prestation_active';
+import "../plugins/flatpickr";
+import { dynamicPrice } from "../components/dynamic_price";
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initMapbox();
   initAutocomplete();
   formActive();
+  initMapbox();
+  prestationActive();
+  dynamicPrice();
+  initFlatpickr();
 });

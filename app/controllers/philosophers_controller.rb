@@ -2,6 +2,7 @@ class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @philosophers = Philosopher.geocoded
+    
     start_date = params['search']['start_date'].split('to')[0].strip
     end_date = params['search']['start_date'].split('to')[1].strip
 
@@ -17,23 +18,6 @@ class PhilosophersController < ApplicationController
     @philosophers = @philosophers.search_by_prestations(params[:prestations]) if params[:location].present?
     @philosophers = @philosophers.available_on?(DateTime.parse(start_date), DateTime.parse(end_date)) if start_date.present? && end_date.present?
 
-    # if params[:specialty].present? && params[:location].present? && params[:prestations].present?
-    #   @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location]).search_by_prestations(params[:prestations])
-    # elsif params[:specialty].present? && params[:location].present?
-    #   @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_location(params[:location])
-    # elsif params[:specialty].present? && params[:prestations].present?
-    #   @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty]).search_by_prestations(params[:prestations])
-    # elsif params[:prestations].present? && params[:location].present?
-    #   @philosophers = Philosopher.geocoded.search_by_prestations(params[:prestations]).search_by_location(params[:location])
-    # elsif params[:location].present?
-    #   @philosophers = Philosopher.geocoded.search_by_location(params[:location])
-    # elsif params[:specialty].present?
-    #   @philosophers = Philosopher.geocoded.search_by_specialty(params[:specialty])
-    # elsif params[:prestations].present?
-    #   @philosophers = Philosopher.geocoded.search_by_prestations(params[:prestations])
-    # else
-    #   @philosophers
-    # end
   end
 
   def list_owned

@@ -1,5 +1,40 @@
-end date
-start date 
-total price
-philosopher
-number of night
+
+
+<div class="col-12 col-lg-7 p-0">
+  <div class="container">
+    <div class="cont-index-philosopher">
+      <h1 class="title">My reservations</h1>
+      <div class="con-cards-index">
+        <% @my_reservations.sort.reverse.each do |reservation| %>
+          <h3 class="title"><%= link_to philosopher_path(reservation.philosopher) do %></h3>
+          
+            <div class="card-philosopher">
+
+              <div class="card-philosopher-photo">
+                <% if reservation.philosopher.photo.attached? %>
+                  <%= cl_image_tag reservation.philosopher.photo.key, crop: :fill %>
+                <% end %>
+              </div>
+
+              <div class="card-philosopher-content">
+                <h3 class="title">My party with 
+                  <% if reservation.philosopher.first_name? %>
+                    <%= reservation.philosopher.first_name %> <%= reservation.philosopher.last_name %>
+                  <% else %>
+                    <%= reservation.philosopher.last_name %>
+                  <% end %>
+                </h3>
+
+                <p class="body"><i class="fas fa-table"></i> from <%= reservation.start_date.strftime("%A, %b %d") %> to <%= reservation.end_date.strftime("%A, %b %d") %></p>
+                <p class="body"><i class="fas fa-map-marker-alt"></i> <%= reservation.address %></p>
+                <% night = (reservation.end_date - reservation.start_date).to_i %>
+                <% price = reservation.philosopher.price_per_night %>
+                <h4 class="title"> <%= night * price %>€ for <%= night %> nights</h4>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

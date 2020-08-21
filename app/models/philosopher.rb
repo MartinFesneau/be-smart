@@ -38,10 +38,13 @@ class Philosopher < ApplicationRecord
 
   def available?(start_date, end_date)
     reservations.each do |reservation|
-      return !(start_date >= reservation.start_date &&
+      if (start_date >= reservation.start_date &&
         start_date <= reservation.end_date ||
-        end_date >= reservation.start_date &&
-        end_date <= reservation.end_date)
+        end_date >= reservation.start_date && end_date <= reservation.end_date)
+        return false
+      end
+
+      true
     end
   end
 end

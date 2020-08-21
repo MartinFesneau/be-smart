@@ -2,7 +2,6 @@ class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @philosophers = Philosopher.geocoded
-
     if params['start_date'].present?
       @start_date = params['start_date'].split('to')[0].strip
       @end_date = params['start_date'].split('to')[1].strip

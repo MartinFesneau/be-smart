@@ -7,7 +7,6 @@
             <%= f.input :location, label: false, placeholder: "Enter an address", input_html: { class: "default-input", id: "search_location" }, wrapper_html: { class: "wrapper-search-algolia" } %>
             <%= f.input :start_date, as: :string, required: false, label: false , input_html: { class: "default-input", id: "range_start" }, placeholder: "Dates", wrapper_html: { class: "wrapper-search-date" } %>
             <%= f.submit "Search", class: "primary-btn" %>
-        </div>
           <% end %>
     </div>
   </div>

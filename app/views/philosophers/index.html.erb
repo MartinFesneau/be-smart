@@ -1,8 +1,7 @@
   <div class="row m-0">
     <div class="col-12 col-lg-7 p-0">
         <div class="cont-index-philosopher">
-          <h1 class="title">All philosophers</h1>
-
+          <h1 class="title">Philosopher in <%= params['search']['location'] %>   </h1>
           <%= form_tag philosophers_path, method: :get do %>
           <div class="form-group-home">
               <div class="location-field">

@@ -2,10 +2,9 @@ class PhilosophersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
   def index
     @philosophers = Philosopher.geocoded
-    
     start_date = params['search']['start_date'].split('to')[0].strip
     end_date = params['search']['start_date'].split('to')[1].strip
-
+    
     @markers = @philosophers.map do |philosopher|
       {
         lat: philosopher.latitude,

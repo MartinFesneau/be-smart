@@ -7,7 +7,6 @@ class PhilosophersController < ApplicationController
       @end_date = params['start_date'].split('to')[1].strip
     end
 
-
     @philosophers = @philosophers.search_by_location(params[:location]) if params[:location].present?
     @philosophers = @philosophers.search_by_prestations(params[:prestations]) if params[:prestations].present?
     @philosophers = @philosophers.search_by_specialty(params[:specialty]) if params[:specialty].present?

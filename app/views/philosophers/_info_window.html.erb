@@ -5,7 +5,11 @@
     <% end %>
   </div>
   <div class="popup-content">
-    <p class="body"><%= philosopher.last_name %></p>
+    <% if philosopher.first_name %>
+          <p class="body"><%= philosopher.first_name %> <%= philosopher.last_name %></p>
+    <% else %>
+      <p class="body"><%= philosopher.last_name %></p>
+    <% end %>
     <p class="body-strong"><%= philosopher.price_per_night %>€/night</p>
   </div>
 <% end %>

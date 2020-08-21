@@ -10,13 +10,14 @@
 
             <%= form_tag philosophers_path, method: :get do %>
               <div class="form-group-home">
-                
+
                 <input id="start_date" type="text" name="start_date" value="<%= params['start_date'] %>" hidden="true">
-                
+                <input id="location" type="text" name="location" value="<%= params['location'] %>" hidden="true">
+
                   <div class="specialty-field">
                     <%= select_tag "specialty", options_for_select(Philosopher::SPECIALTIES, params[:specialty]), class: "form-control", prompt: 'Specialty' %>
                   </div>
-                  
+
                   <fieldset class="form-group check_boxes required philosopher_prestations">
                     <div class="con-prestations">
                       <% Philosopher::PRESTATIONS.each do |prestation| %>

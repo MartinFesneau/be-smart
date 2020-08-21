@@ -6,7 +6,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
+
   <% if controller.controller_name == "philosophers" && controller.action_name == "index" %>
     <div class="location-field">
                 <%= text_field_tag :location,
@@ -28,8 +28,8 @@
             <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "See my philosophers", dashboard_philosophers_path, class: "dropdown-item" %>
-          <%= link_to "Orders", "#", class: "dropdown-item" %>
+          <%= link_to "My philosophers", dashboard_philosophers_path, class: "dropdown-item" %>
+          <%= link_to "My reservations", dashboard_reservations_path, class: "dropdown-item" %>
           <%= link_to "Sign off", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>

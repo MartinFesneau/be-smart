@@ -58,6 +58,14 @@
   }
 }
 
+.card-philo a {
+  text-decoration: none;
+  color: #707070;
+  &:hover {
+    color: black;
+  }
+}
+
 
 // .form-group-home {
 //   display: flex;

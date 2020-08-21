@@ -29,9 +29,7 @@
   .fas {
     color: black;
     font-size: 24px;
-  }
-
-  
+  } 
 }
 
 .cont-nationality {
@@ -89,54 +87,38 @@
   display: inline;  
 }
 
-.btn-book {
-  font-family: $body-font;
-  border: 5px $primary-color solid;
-  padding: 8px 16px;
-  border-radius: 25px;
-  text-align: center;
-  color: $primary-color;
-  font-size: $h3;
-  margin-top: 32px;
-  font-weight: bold;
-}
-
-.btn-book:hover {
-  text-decoration: none;
-  font-size: 28px;
-  transition: all 0.3s ease;
-  color: $primary-hover;
-  border: 5px $primary-hover solid;
-}
-
 .cont-photo {
   position: relative;  
   position: sticky;
     top: 0;
 
-    img {
-      height: 100vh;
+  img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+    
+  .booking-form {
+  opacity: 0;
+  position: absolute;
+  top: 300px;
+  background-color: $secondary-background-color;
+  border: 1px $border-color solid;
+  padding: 16px;
+  border-radius: 8px;
+  top: 10%;
+  left: 17%;
+
+    .primary-btn {
+      margin-top: 8px;
       width: 100%;
-      object-fit: cover;
+      text-align: center;
     }
-    
-    .booking-form {
-    opacity: 0;
-    position: absolute;
-    top: 300px;
-    background-color: $secondary-background-color;
-    border: 1px $border-color solid;
-    padding: 16px;
-    border-radius: 8px;
-    top: 10%;
-    left: 17%;
-    }
+  }
 
-    #reservation_address {
-      background-color: white;
-    }
-    
-
+  #reservation_address {
+    background-color: $main-background-color;
+  }
 }
 
 .active {

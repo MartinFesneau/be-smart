@@ -1,14 +1,16 @@
 .primary-btn {
   display: inline-block;
   padding: 16px 24px;
+  max-height: 60px;
   background-color: $primary-color;
   text-decoration: none;
   color: $main-background-color;
   font-size: $p;
   font-weight: $semi-bold;
-  border-radius: 32px;
+  line-height: 24px;
+  border-radius: 8px;
   border: none;
-  max-height: 57px;
+
 
   &:hover {
     text-decoration: none;

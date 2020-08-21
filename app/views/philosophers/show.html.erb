@@ -37,33 +37,53 @@
         </div>
         
         <h3 class='title'> <span id="price"><%= @philosopher.price_per_night %></span>€ per night</h3>
+        <!-- Button trigger modal -->
         <% if @philosopher.first_name %>
-          <%= link_to "Party with #{@philosopher.first_name} #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+          <button type="button" class="primary-btn" data-toggle="modal" data-target="#exampleModalCenter">
+            <%= "Party with #{@philosopher.first_name} #{@philosopher.last_name}" %>
+          </button>
         <% else %>
-          <%= link_to "Party with #{@philosopher.last_name}",'#',  class:"primary-btn",id:"book-btn" %>
+          <button type="button" class="primary-btn" data-toggle="modal" data-target="#exampleModalCenter">
+              <%= "Party with #{@philosopher.last_name}" %>
+          </button>
         <% end %>
       </div>
     </div>
     <div class="col-12 col-lg-6">
       <div class="cont-photo">
-
         <div class="photo">
           <% if @philosopher.photo.attached? %>
             <%= cl_image_tag @philosopher.photo.key %>
           <% end %>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
         <div class="booking-form" id="book-form">
           <div class="container-flex">
             <div class="form-part">
-
-              <% if @philosopher.first_name %>
-                <h3 class="title">Book <%= @philosopher.first_name %> <%= @philosopher.last_name %></h3>
-              <% else %>
-                <h3 class="title"><%= @philosopher.last_name %></h3>
-              <% end %> 
-
               <div class="create-form">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <% if @philosopher.first_name %>
+                <h2 class="title">Book <%= @philosopher.first_name %> <%= @philosopher.last_name %></h2>
+              <% else %>
+                <h2 class="title"><%= @philosopher.last_name %></h2>
+              <% end %> 
+              
                 <%= simple_form_for [ @philosopher, @reservation ] do |f| %>
                   <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }, placeholder: "Start" %>
                   <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" }, placeholder: "End" %>

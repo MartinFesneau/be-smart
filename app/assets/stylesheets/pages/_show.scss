@@ -108,12 +108,6 @@
   border-radius: 8px;
   top: 10%;
   left: 17%;
-
-    .primary-btn {
-      margin-top: 8px;
-      width: 100%;
-      text-align: center;
-    }
   }
 
   #reservation_address {
@@ -124,4 +118,17 @@
 .active {
   opacity: .9 !important;
   transition: all 0.5s ease;
+}
+
+.modal-content {
+  background-color: $secondary-background-color;
+  border-radius: 16px;
+  box-shadow: $box-shadow-color;
+  padding: 32px;
+
+    .primary-btn {
+      margin-top: 8px;
+      width: 100%;
+      text-align: center;
+    }
 }

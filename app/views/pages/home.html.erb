@@ -2,19 +2,14 @@
   <div class="container">
     <h1 class="title">Enjoy wisdom</h1>
     <p class="body-strong">Rent a philosopher and enjoy little wisdom nuggets dropped at your feet.</p>
-
-
-        <%= simple_form_for '', url: philosophers_path, method: :get do |f| %>
-            <%= f.input :start_date, as: :string, required: false, input_html: { id: "range_start" }, placeholder: "Start", label: "Period" %>
-            <%= f.input :location, input_html: { id: "search_location" } %>
-            <%= f.submit class: "primary-btn" %>
-        <% end %>
-
-
-
-
-
-
+    <div class="con-search-form">
+          <%= simple_form_for :search, url: philosophers_path, html: {class: "con-simple-form"}, method: :get do |f| %>
+            <%= f.input :location, label: false, placeholder: "Enter an address", input_html: { class: "default-input", id: "search_location" }, wrapper_html: { class: "wrapper-search-algolia" } %>
+            <%= f.input :start_date, as: :string, required: false, label: false , input_html: { class: "default-input", id: "range_start" }, placeholder: "Dates", wrapper_html: { class: "wrapper-search-date" } %>
+            <%= f.submit "Search", class: "primary-btn" %>
+        </div>
+          <% end %>
+    </div>
   </div>
 </div>
 

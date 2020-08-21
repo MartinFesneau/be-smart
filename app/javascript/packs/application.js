@@ -36,8 +36,8 @@ import { initFlatpickr } from "../plugins/flatpickr";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initAutocomplete();
-  initMapbox();
   prestationActive();
   dynamicPrice();
   initFlatpickr();
+  initMapbox();
 });
